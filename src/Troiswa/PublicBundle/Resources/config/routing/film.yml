@@ -1,0 +1,12 @@
+troiswa_public_films:
+    #path:     /hello/{name}
+    path:     /films
+    defaults: { _controller: TroiswaPublicBundle:Film:films }
+
+
+troiswa_public_filmId:
+    #path:     /hello/{name}
+    path:     /films/{number}
+    defaults: { _controller: TroiswaPublicBundle:Film:unFilm }
+    requirements: 
+     number: \d+

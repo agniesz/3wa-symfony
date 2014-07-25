@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="utf-8"/>
+    <title>competence</title>
+    
+    <link rel="stylesheet" type="text/css" href=""/>
+    <link rel="stylesheet" type="text/css" href=""/>
+
+    
+</head>
+
+
+
+
+
+
+
+
+<body>
+
+ <h1> Symfony - twig </h1>
+
+    <h3> Mes compétences : </h3>
+
+
+        {% for comp, info in competence %}
+
+        <input data-max="10" type="text" value= {{ info.note }} class="dial" data-width = "70" data-readOnly ="true" data-fgColor = {{ info.couleur }}>
+
+            {{ comp }} : {{ info.note }}
+                <hr>
+
+
+
+        {% endfor %}   
+
+</body>
+
+
+
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src= "{{asset('js/jquery.knob.js')}}"></script>
+        <script>
+          $(document).ready(function() {
+                $(".dial").knob();
+            });
+            </script>
+
+</html>
+
+

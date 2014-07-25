@@ -1,0 +1,44 @@
+troiswa_public_homepage:
+    #path:     /hello/{name}
+    path:     /
+    defaults: { _controller: TroiswaPublicBundle:Main:index }
+
+troiswa_public_bonjour:
+    #path:     /hello/{name}
+    path:     /bonjour
+    defaults: { _controller: TroiswaPublicBundle:Main:bonjour }
+
+
+troiswa_public_variable:
+    #path:     /hello/{name}
+    path:     /age/{number}
+    defaults: { _controller: TroiswaPublicBundle:Main:age }
+    requirements: 
+     number: \d+
+
+troiswa_public_competence:
+    #path:     /hello/{name}
+    path:     /competence
+    defaults: { _controller: TroiswaPublicBundle:Main:competence }
+
+
+troiswa_public_resource_film:
+    resource: "@TroiswaPublicBundle/Resources/config/routing/film.yml"
+
+
+troiswa_public_resource_acteur:
+    resource: "@TroiswaPublicBundle/Resources/config/routing/acteur.yml"
+
+
+troiswa_public_resource_admin:
+    resource: "@TroiswaPublicBundle/Resources/config/routing/admin.yml"
+    prefix:   /admin 
+
+troiswa_public_contact:
+    path:     /contact
+    defaults: { _controller: TroiswaPublicBundle:Main:contact }
+
+
+troiswa_public_resource_categorie:
+    resource: "@TroiswaPublicBundle/Resources/config/routing/categorie.yml"
+   

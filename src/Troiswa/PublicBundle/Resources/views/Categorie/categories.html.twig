@@ -1,0 +1,98 @@
+{% extends 'TroiswaPublicBundle::layout.html.twig' %}
+
+{% block title %} 
+
+    Toutes les catégories {{ parent() }}
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+
+
+
+     <div class="container">
+
+
+        
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header">Les catégories
+                    <small></small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('troiswa_public_homepage') }}"> Page d'acceuil</a>
+                    </li>
+                    <li class="active"><a href="{{ path('troiswa_public_acteurs') }}">Acteurs</a></li>
+                </ol>
+            </div>
+
+        </div>
+
+    
+    {% for categorie in categories %}
+
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="panel-group" id="accordion">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ loop.index }}">
+                                {{ categorie.titre }}
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="collapse-{{ loop.index }}" class="panel-collapse collapse">
+                            <div class="panel-body">
+
+                            <p>  
+
+                                {% if categorie.films %}
+
+                              <ul>
+                                 {% for film in categorie.films %}
+
+                                <li><a href="{{ path('troiswa_public_filmId',{'number':film.id}) }}">  {{ film.titre }} </a></li>
+
+                                 {% endfor %}
+
+                              </ul>
+
+                                {% endif  %}
+
+                            </p>
+                           
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                        </div>
+                    </div>
+
+                </div>
+
+
+    {% endfor %}
+
+            </div>
+
+        
+
+
+
+{% endblock %}
+
+   
+

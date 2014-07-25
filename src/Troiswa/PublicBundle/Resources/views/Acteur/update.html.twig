@@ -1,0 +1,23 @@
+{% extends 'TroiswaPublicBundle::layout.html.twig' %}
+
+{% block title %} 
+
+        unActeur {{ parent() }}
+
+{% endblock %}
+
+    {% block body %}
+        
+        {% for message in app.session.flashbag.get('info') %}
+
+                    <div class="alert alert-success">{{ message }}</div>
+
+        {% endfor %}            
+
+        
+            {{ form(formUpdate) }}
+
+
+
+
+    {% endblock %}

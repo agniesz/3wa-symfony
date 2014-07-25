@@ -1,0 +1,16 @@
+troiswa_public_ajouter:
+    #path:     /hello/{name}
+    path:    /acteur/ajouter
+    defaults: { _controller: TroiswaPublicBundle:Acteur:ajouter }
+
+troiswa_public_update:
+    #path:     /hello/{name}
+    path:    /acteur/update/{number}
+    defaults: { _controller: TroiswaPublicBundle:Acteur:update }
+    requirements: 
+      number: \d+ 
+
+troiswa_public_ajoutfilm:
+    #path:     /hello/{name}
+    path:    /film/ajoutFilm
+    defaults: { _controller: TroiswaPublicBundle:Film:ajoutFilm }

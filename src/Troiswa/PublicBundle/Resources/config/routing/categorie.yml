@@ -1,0 +1,13 @@
+troiswa_public_categories:
+    #path:     /hello/{name}
+    path:     /categories
+    defaults: { _controller: TroiswaPublicBundle:Categorie:categories }
+
+
+#troiswa_public_categorieId:
+    #path:     /hello/{name}
+    #path:     /categories/{number}
+    #defaults: { _controller: TroiswaPublicBundle:Categorie:categorieId }
+    #requirements: 
+     #number: \d+
+
